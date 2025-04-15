@@ -16,6 +16,7 @@ public class Main {
                     "5 - Transferir Entre Contas \n" +
                     "Digite o Numero da funcao");
             int option = scanner.nextInt();
+            scanner.nextLine();
             switch (option){
                 case 0:
                     isOn = false;
@@ -24,9 +25,25 @@ public class Main {
                     System.out.println("Digite Do Nome do Responsavel pela Conta");
                     String user = scanner.next();
                     acounts.add(0,new ArrayList<String>());
-                    acounts.getFirst().add(user);
+                    acounts.get(0).add(user);
                     break;
                 case 2:
+                    int count = 0;
+                    for (ArrayList arrays:acounts){
+                        System.out.println("Numero da conta "+count+ " Nome do Responsavel pela conta "+ arrays.get(0));
+                        count++;
+                    }
+                    System.out.println("Digite o Numero da conta do usuario que voce quer efetuar o deposito\n");
+                    int numberAcaunt = scanner.nextInt();
+                    if ((numberAcaunt<0) || (numberAcaunt>=acounts.size())){
+                        System.out.println("O numero da conta que voce digitou nao costa");
+                        break;
+                    }
+                    else {
+                        System.out.println("Digite o valor que voce gostaria de depositar ");
+                        Integer value = scanner.nextInt();
+                        acounts.get(numberAcaunt).add(1,value.toString());
+                    }
                     break;
                 case 3:
                     break;

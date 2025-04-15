@@ -21,6 +21,10 @@ public class Main {
                     isOn = false;
                     break;
                 case 1:
+                    System.out.println("Digite Do Nome do Responsavel pela Conta");
+                    String user = scanner.next();
+                    acounts.add(0,new ArrayList<String>());
+                    acounts.getFirst().add(user);
                     break;
                 case 2:
                     break;

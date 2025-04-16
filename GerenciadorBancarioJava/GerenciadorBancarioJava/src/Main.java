@@ -25,7 +25,9 @@ public class Main {
                     System.out.println("Digite Do Nome do Responsavel pela Conta");
                     String user = scanner.next();
                     acounts.add(0,new ArrayList<String>());
-                    acounts.get(0).add(user);
+                    acounts.get(0).add(0,user);
+                    acounts.get(0).add(1,"0");
+
                     break;
                 case 2:
                     int count = 0;
@@ -38,16 +40,25 @@ public class Main {
                     if ((numberAcaunt<0) || (numberAcaunt>=acounts.size())){
                         System.out.println("O numero da conta que voce digitou nao costa");
                         break;
+
                     }
                     else {
-                        System.out.println("Digite o valor que voce gostaria de depositar ");
-                        Integer value = scanner.nextInt();
-                        acounts.get(numberAcaunt).add(1,value.toString());
+                        System.out.println("Quanto você deseja depositar?");
+                        int dinheiroDepositar = scanner.nextInt();
+                        scanner.nextLine();
+
+                        int saldoConta = Integer.parseInt(String.valueOf(acounts.get(numberAcaunt).get(1)));
+                        saldoConta += dinheiroDepositar;
+                        String novoSaldo = Integer.toString(saldoConta);
+                        acounts.get(numberAcaunt).set(1, novoSaldo);
                     }
                     break;
                 case 3:
                     break;
                 case 4:
+                    for (ArrayList i :acounts){
+                        System.out.println(i);
+                    }
                     break;
                 case 5:
                     break;

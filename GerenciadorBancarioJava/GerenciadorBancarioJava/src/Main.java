@@ -74,9 +74,7 @@ public class Main {
                     }
                         break;
                     case 4:
-                            for (ArrayList i : acounts) {
-                                System.out.println(i);
-                            }
+                            
                             break;
                         case 5:
                             break;
